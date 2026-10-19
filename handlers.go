@@ -11,7 +11,7 @@ type PutRequest struct {
 	TTL   int    `json:"ttl"`
 }
 
-func (s *Server) healthHandler(w http.ResponseWriter) {
+func (s *Server) healthHandler(w http.ResponseWriter, _ *http.Request) {
 	writeJSON(w, http.StatusOK, map[string]string{
 		"status": "i'm alive <3",
 	})
