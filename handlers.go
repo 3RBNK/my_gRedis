@@ -17,6 +17,12 @@ func (s *Server) healthHandler(w http.ResponseWriter, _ *http.Request) {
 	})
 }
 
+func (s *Server) pingPong(w http.ResponseWriter, _ *http.Request) {
+	writeJSON(w, http.StatusOK, map[string]string{
+		"status": "pong",
+	})
+}
+
 func (s *Server) getHandler(w http.ResponseWriter, r *http.Request) {
 	key := r.PathValue("key")
 
