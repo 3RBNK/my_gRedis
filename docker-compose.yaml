@@ -7,6 +7,13 @@ services:
     ports:
       - "${SERVER_PORT}:9000"
     restart: always
+    cpus: "1.0"
+    mem_limit: 256m
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: 3
     healthcheck:
       test: ["CMD", "curl", "-fsS", "--max-time", "2", "http://localhost:9000/ping"]
       interval: 10s
