@@ -24,7 +24,7 @@ func (s *Server) registeredRoute() {
 	s.mux.HandleFunc("GET /cache/{key}", s.getHandler)
 	s.mux.HandleFunc("PUT /cache/{key}", s.setHandler)
 	s.mux.HandleFunc("DELETE /cache/{key}", s.delHandler)
-	s.mux.HandleFunc("GET /pong", s.pingPong)
+	s.mux.HandleFunc("GET /ping", s.pingPong)
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
